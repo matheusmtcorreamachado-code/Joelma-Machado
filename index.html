@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joelma Machado | Moda Íntima</title>
+<meta name="description" content="Joelma Machado — moda íntima elegante, confortável e especial para você.">
+<style>
+:root{
+  --purple:#4b145f; --purple2:#6f2b83; --gold:#c9a24b; --cream:#fbf7f2;
+  --ink:#241b26; --white:#fff; --muted:#756b75;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(75,20,95,.97);color:white;box-shadow:0 3px 16px #0002}
+.nav{max-width:1180px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:Georgia,serif;font-size:25px;letter-spacing:.4px}.logo span{color:var(--gold)}
+nav{display:flex;gap:24px;font-size:14px}nav a:hover{color:#e7c86d}
+.cart{border:1px solid #ffffff55;padding:9px 13px;border-radius:22px;cursor:pointer}
+.hero{background:linear-gradient(120deg,#381044,#6f2b83);color:white}
+.hero-inner{max-width:1180px;margin:auto;min-height:500px;padding:75px 22px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px}
+.kicker{color:#e6c86d;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font:normal clamp(46px,7vw,78px)/.98 Georgia,serif;margin:13px 0 20px}
+.hero p{max-width:520px;color:#f3eaf5;font-size:17px}
+.btn{display:inline-block;background:var(--gold);color:#29162f;padding:13px 22px;border-radius:26px;font-weight:bold;margin-top:25px;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.07)}
+.hero-card{min-height:350px;border-radius:28px;background:
+linear-gradient(135deg,#ffffff12,#ffffff03),
+url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=1000&q=85') center/cover;
+box-shadow:0 20px 50px #0004}
+section{max-width:1180px;margin:auto;padding:70px 22px}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}
+h2{font:normal 39px Georgia,serif;color:var(--purple)}
+.section-head p{color:var(--muted);max-width:510px}
+.categories{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.chip{border:1px solid #d8cdd8;background:white;border-radius:30px;padding:9px 15px;cursor:pointer}.chip.active,.chip:hover{background:var(--purple);color:white;border-color:var(--purple)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:white;border-radius:18px;overflow:hidden;box-shadow:0 7px 25px #35143f10;display:flex;flex-direction:column}
+.product img{width:100%;aspect-ratio:4/4.7;object-fit:cover;background:#eee}
+.product-body{padding:16px}.tag{font-size:11px;color:var(--gold);font-weight:bold;text-transform:uppercase;letter-spacing:1px}
+.product h3{font:normal 20px Georgia,serif;margin:5px 0}
+.price{font-weight:bold;color:var(--purple);font-size:17px}
+.add{width:100%;padding:10px;margin-top:12px;border:0;border-radius:9px;background:var(--purple);color:#fff;cursor:pointer;font-weight:bold}
+.add:hover{background:var(--purple2)}
+.about{background:#fff}
+.about-inner{max-width:1180px;margin:auto;padding:70px 22px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-photo{height:390px;border-radius:24px;background:url('https://images.unsplash.com/photo-1603184017968-953f59cd2eae?auto=format&fit=crop&w=1000&q=85') center/cover}
+.about p{color:#665d67;margin-top:15px}
+footer{background:#28102f;color:#eee;padding:40px 22px;text-align:center}
+footer strong{color:#e3c15d;font-family:Georgia,serif;font-size:22px}
+.cart-panel{position:fixed;right:-420px;top:0;width:min(400px,100%);height:100%;background:white;z-index:20;box-shadow:-10px 0 30px #0003;padding:25px;transition:.3s;display:flex;flex-direction:column}
+.cart-panel.open{right:0}.cart-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.close{font-size:25px;border:0;background:none;cursor:pointer}
+.cart-items{overflow:auto;flex:1}.cart-item{padding:13px 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:10px}.cart-total{padding:18px 0;font-size:19px;font-weight:bold}
+.whats{background:#2b9b59;color:white;padding:12px;border:0;border-radius:9px;font-weight:bold;cursor:pointer;width:100%}
+.empty{color:var(--muted);padding:25px 0}
+@media(max-width:850px){nav{display:none}.hero-inner,.about-inner{grid-template-columns:1fr}.hero-card{min-height:300px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){section{padding:50px 16px}.grid{gap:12px}.product-body{padding:12px}.product h3{font-size:17px}.nav{padding:14px 16px}.hero-inner{padding:55px 16px}h2{font-size:32px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#">Joelma <span>Machado</span></a>
+    <nav><a href="#inicio">Início</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a></nav>
+    <button class="cart" onclick="toggleCart()">🛍️ Carrinho (<span id="count">0</span>)</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Moda íntima • Elegância • Conforto</div>
+      <h1>Beleza que começa em você.</h1>
+      <p>Descubra uma seleção especial de moda íntima pensada para unir delicadeza, conforto e estilo em todos os momentos.</p>
+      <a class="btn" href="#produtos">Ver coleção</a>
+    </div>
+    <div class="hero-card" aria-label="Imagem ilustrativa de moda íntima"></div>
+  </div>
+</section>
+
+<section id="produtos">
+  <div class="section-head">
+    <div><div class="kicker" style="color:var(--gold)">Nossa coleção</div><h2>Escolha o seu favorito</h2></div>
+    <p>Uma vitrine inicial. Os nomes, preços e fotos podem ser trocados pelos produtos reais da loja.</p>
+  </div>
+  <div class="categories">
+    <button class="chip active" onclick="filterProducts('Todos',this)">Todos</button>
+    <button class="chip" onclick="filterProducts('Conjuntos',this)">Conjuntos</button>
+    <button class="chip" onclick="filterProducts('Sutiãs',this)">Sutiãs</button>
+    <button class="chip" onclick="filterProducts('Calcinhas',this)">Calcinhas</button>
+    <button class="chip" onclick="filterProducts('Pijamas',this)">Pijamas</button>
+  </div>
+  <div class="grid" id="products"></div>
+</section>
+
+<div class="about" id="sobre">
+  <div class="about-inner">
+    <div class="about-photo"></div>
+    <div>
+      <div class="kicker" style="color:var(--gold)">Joelma Machado</div>
+      <h2>Mais do que lingerie.</h2>
+      <p>A Joelma Machado nasceu para valorizar momentos em que conforto e confiança caminham juntos. Nossa proposta é oferecer peças bonitas, delicadas e escolhidas com carinho.</p>
+      <p>Esta é a primeira versão da loja online e pode ser personalizada com a história real da marca.</p>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer id="contato">
+  <strong>Joelma Machado</strong>
+  <p style="margin-top:8px">Moda íntima com elegância e carinho.</p>
+  <p style="margin-top:15px;font-size:13px;color:#c9bdcc">WhatsApp: (00) 00000-0000 • Instagram: @joelmamachado</p>
+</footer>
+
+<aside class="cart-panel" id="cartPanel">
+  <div class="cart-head"><h2 style="font-size:28px">Seu carrinho</h2><button class="close" onclick="toggleCart()">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-total">Total: R$ <span id="total">0,00</span></div>
+  <button class="whats" onclick="checkout()">Finalizar pedido pelo WhatsApp</button>
+</aside>
+
+<script>
+const products=[
+ {id:1,name:"Conjunto Aurora",cat:"Conjuntos",price:89.90,img:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80"},
+ {id:2,name:"Sutiã Delicata",cat:"Sutiãs",price:59.90,img:"https://images.unsplash.com/photo-1617331721458-b53c6728100c?auto=format&fit=crop&w=700&q=80"},
+ {id:3,name:"Calcinha Serena",cat:"Calcinhas",price:34.90,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"},
+ {id:4,name:"Pijama Luna",cat:"Pijamas",price:79.90,img:"https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=700&q=80"},
+ {id:5,name:"Conjunto Imperial",cat:"Conjuntos",price:99.90,img:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80"},
+ {id:6,name:"Sutiã Essenza",cat:"Sutiãs",price:64.90,img:"https://images.unsplash.com/photo-1608528577891-eb055944f2e8?auto=format&fit=crop&w=700&q=80"},
+ {id:7,name:"Calcinha Aura",cat:"Calcinhas",price:29.90,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"},
+ {id:8,name:"Pijama Charme",cat:"Pijamas",price:84.90,img:"https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=700&q=80"}
+];
+let cart=[];
+const money=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+function render(list=products){
+ document.getElementById('products').innerHTML=list.map(p=>`
+ <article class="product">
+   <img src="${p.img}" alt="${p.name}" loading="lazy">
+   <div class="product-body"><div class="tag">${p.cat}</div><h3>${p.name}</h3><div class="price">R$ ${money(p.price)}</div>
+   <button class="add" onclick="addToCart(${p.id})">Adicionar ao carrinho</button></div>
+ </article>`).join('');
+}
+function filterProducts(cat,el){
+ document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+ render(cat==='Todos'?products:products.filter(p=>p.cat===cat));
+}
+function addToCart(id){const p=products.find(x=>x.id===id);cart.push(p);updateCart();toggleCart(true)}
+function removeFromCart(i){cart.splice(i,1);updateCart()}
+function updateCart(){
+ document.getElementById('count').textContent=cart.length;
+ document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div class="cart-item"><div><b>${p.name}</b><br><small>${p.cat}</small></div><div>R$ ${money(p.price)}<br><button onclick="removeFromCart(${i})" style="border:0;background:none;color:#a33;cursor:pointer">remover</button></div></div>`).join(''):'<div class="empty">Seu carrinho está vazio.</div>';
+ document.getElementById('total').textContent=money(cart.reduce((s,p)=>s+p.price,0));
+}
+function toggleCart(force){
+ const el=document.getElementById('cartPanel');
+ if(force===true)el.classList.add('open');else el.classList.toggle('open');
+}
+function checkout(){
+ if(!cart.length){alert('Adicione pelo menos um produto ao carrinho.');return}
+ const lines=cart.map(p=>`• ${p.name} — R$ ${money(p.price)}`).join('%0A');
+ const total=money(cart.reduce((s,p)=>s+p.price,0));
+ const phone='5500000000000'; // TROQUE pelo WhatsApp real da loja
+ const msg=`Olá, Joelma Machado! Gostaria de fazer um pedido:%0A%0A${lines}%0A%0ATotal: R$ ${total}`;
+ window.open(`https://wa.me/${phone}?text=${msg}`,'_blank');
+}
+render();updateCart();
+</script>
+</body>
+</html>
