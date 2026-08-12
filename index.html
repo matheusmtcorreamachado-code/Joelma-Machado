@@ -163,7 +163,7 @@ function checkout(){
  if(!cart.length){alert('Adicione pelo menos um produto ao carrinho.');return}
  const lines=cart.map(p=>`• ${p.name} — R$ ${money(p.price)}`).join('%0A');
  const total=money(cart.reduce((s,p)=>s+p.price,0));
- const phone='5500000000000'; // TROQUE pelo WhatsApp real da loja
+ const phone='554898290583'; // TROQUE pelo WhatsApp real da loja
  const msg=`Olá, Joelma Machado! Gostaria de fazer um pedido:%0A%0A${lines}%0A%0ATotal: R$ ${total}`;
  window.open(`https://wa.me/${phone}?text=${msg}`,'_blank');
 }
